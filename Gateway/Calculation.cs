@@ -32,7 +32,7 @@ namespace Gateway
     }
     public static class CalculationExtensions
     {
-        public static IApplicationBuilder UseExecutionTimeMiddleware(this IApplicationBuilder builder)
+        public static IApplicationBuilder Calculation(this IApplicationBuilder builder)
         {
             return builder.UseMiddleware<Calculation>();
         }

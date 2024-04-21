@@ -32,5 +32,4 @@ app.MapControllers();
 app.UseMiddleware<Calculation>();
 await app.UseOcelot();
 
-
 app.Run();
