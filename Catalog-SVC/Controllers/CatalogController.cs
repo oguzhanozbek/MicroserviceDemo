@@ -110,6 +110,28 @@ namespace Catalog_SVC.Controllers
             return Ok(itemInDb);
         }
 
+        // UPDATE OPERATION > PUT > /api/catalog/restockitems/{quantity}
+        [HttpPut]
+        [Route("[action]/{quantity}")]
+        public async Task<IActionResult> RestockItems(int quantity)
+        {
+            var allitems = await _context.Items.ToListAsync();
+
+            foreach (var item in allitems)
+            {
+                item.AvailableStock += quantity;
+            }
+
+            await _context.SaveChangesAsync();
+
+            await _publisher.Publish(new ItemRestocked
+            {
+                RestockCount = quantity
+            });
+
+            return Ok("All items have been restocked.");
+        }
+
 
 
     }

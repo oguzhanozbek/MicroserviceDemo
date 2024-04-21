@@ -80,6 +80,19 @@
         },
 
         {
+            "DownstreamPathTemplate": "/api/catalog/restockitems/{restockcount}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5206
+                }
+            ],
+            "UpstreamPathTemplate": "/api/gateway/catalog/restockitems/{restockcount}",
+            "UpstreamHttpMethod": [ "Put" ]
+        },
+
+        {
             "DownstreamPathTemplate": "/api/search/searchTerm={searchTerm}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
