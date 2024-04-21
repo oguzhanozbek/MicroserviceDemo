@@ -19,6 +19,7 @@ namespace Search_SVC.Consumers
                 OriginalId = context.Message.Id.ToString(),
                 Name = context.Message.Name,
                 Price = context.Message.Price,
+                AvailableStock = context.Message.AvailableStock,
                 CatalogBrand = context.Message.CatalogBrand
             });
         }

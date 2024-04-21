@@ -61,6 +61,7 @@ namespace Catalog_SVC.Controllers
                 Id = item.Id,
                 Name = item.Name,
                 Price = item.Price,
+                AvailableStock = item.AvailableStock,
                 CatalogBrand = item.CatalogBrand
             });
             return Ok(item);

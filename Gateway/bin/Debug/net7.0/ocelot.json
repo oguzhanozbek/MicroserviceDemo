@@ -64,6 +64,32 @@
             ],
             "UpstreamPathTemplate": "/api/gateway/catalog/{id}",
             "UpstreamHttpMethod": [ "Delete" ]
+        },
+
+        {
+            "DownstreamPathTemplate": "/api/search/searchTerm={searchTerm}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5004
+                }
+            ],
+            "UpstreamPathTemplate": "/api/gateway/search/searchTerm={searchTerm}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+
+        {
+            "DownstreamPathTemplate": "/api/search/getAvailableItems",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5004
+                }
+            ],
+            "UpstreamPathTemplate": "/api/gateway/search/getAvailableItems",
+            "UpstreamHttpMethod": [ "Get" ]
         }
     ],
 

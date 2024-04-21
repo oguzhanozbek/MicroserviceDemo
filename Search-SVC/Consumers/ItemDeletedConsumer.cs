@@ -15,7 +15,7 @@ namespace Search_SVC.Consumers
         public async Task Consume(ConsumeContext<ItemDeleted> context)
         {
             var filter = Builders<CatalogItem>.Filter.Eq("OriginalId", context.Message.Id);
-            var result = await DB.Collection<CatalogItem>().DeleteOneAsync(filter);
+            await DB.Collection<CatalogItem>().DeleteOneAsync(filter);
             Console.WriteLine($"It has been deleted: {context.Message.Id}");
         }
             
