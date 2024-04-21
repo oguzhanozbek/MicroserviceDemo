@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ZGGcUXhtgmrSEklKc+DaSjChCXXXX2CPS9PCmE6CI48=",
+  "Source": "Search-SVC",
+  "BasePath": "_content/Search-SVC",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
