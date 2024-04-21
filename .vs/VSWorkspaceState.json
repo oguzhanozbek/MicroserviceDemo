@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Catalog-SVC\\Models",
+    "\\Search-SVC",
     "\\Search-SVC\\Models"
   ],
-  "SelectedNode": "\\MicroserviceDemo.sln",
+  "SelectedNode": "\\Search-SVC\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
