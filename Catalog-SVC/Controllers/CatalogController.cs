@@ -83,5 +83,34 @@ namespace Catalog_SVC.Controllers
 
             return Ok(new {Message = "Item deleted"});
         }
+
+        // UPDATE OPERATION > PUT > /api/catalog/{id}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateItem(Guid id, CatalogItem updatedItem)
+        {
+            var itemInDb = await _context.Items.FindAsync(id);
+
+            itemInDb.Name = updatedItem.Name;
+            itemInDb.Price = updatedItem.Price;
+            itemInDb.AvailableStock = updatedItem.AvailableStock;
+            itemInDb.CatalogBrand = updatedItem.CatalogBrand;
+
+            _context.Items.Update(itemInDb);
+            await _context.SaveChangesAsync();
+
+            await _publisher.Publish(new ItemUpdated
+            {
+                Name = updatedItem.Name,
+                Price = updatedItem.Price,
+                AvailableStock = updatedItem.AvailableStock,
+                CatalogBrand = updatedItem.CatalogBrand,
+                UpdId = id.ToString()
+
+            });
+            return Ok(itemInDb);
+        }
+
+
+
     }
 }

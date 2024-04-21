@@ -67,6 +67,19 @@
         },
 
         {
+            "DownstreamPathTemplate": "/api/catalog/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5206
+                }
+            ],
+            "UpstreamPathTemplate": "/api/gateway/catalog/{id}",
+            "UpstreamHttpMethod": [ "Put" ]
+        },
+
+        {
             "DownstreamPathTemplate": "/api/search/searchTerm={searchTerm}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
